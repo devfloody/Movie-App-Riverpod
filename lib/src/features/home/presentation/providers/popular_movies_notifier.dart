@@ -14,7 +14,7 @@ class PopularMoviesNotifier extends AsyncNotifier<List<Movie>> {
   getMovies() async {
     state = const AsyncLoading();
     state = await AsyncValue.guard(
-      () => ref.read(movieRepository).popularMovies(page: 1),
+      () async => await ref.read(movieRepository).popularMovies(page: 1),
     );
   }
 }

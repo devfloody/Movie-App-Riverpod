@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_movie_riverpod/gen/assets.gen.dart';
 import 'package:new_movie_riverpod/src/core/constants/api_constant.dart';
-import 'package:new_movie_riverpod/src/core/shared/extentions/widget_extention.dart';
 import 'package:new_movie_riverpod/src/features/home/domain/movie_model.dart';
 
 import '../../../../core/themes/app_theme.dart';
@@ -49,10 +48,10 @@ class MovieCardWidget extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(8.r),
                   child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
+                    filter: ImageFilter.blur(sigmaX: 8, sigmaY: 8),
                     child: Container(
-                      height: 40.h,
-                      width: 54.w,
+                      height: 38.h,
+                      width: 50.w,
                       decoration: const BoxDecoration(color: Colors.black12),
                       padding: EdgeInsets.symmetric(vertical: 3.h, horizontal: 6.w),
                       child: Column(
@@ -93,16 +92,15 @@ class MovieCardWidget extends StatelessWidget {
           ),
         ),
         8.verticalSpace,
-        Center(
-          child: Text(
-            movie.title ?? '',
-            style: AppFont.plusJakartaMedium.copyWith(
-              color: AppColor.primayTextColor,
-              fontSize: 10.sp,
-              overflow: TextOverflow.ellipsis,
-            ),
+        Text(
+          movie.title ?? '',
+          textAlign: TextAlign.center,
+          style: AppFont.plusJakartaMedium.copyWith(
+            color: AppColor.primayTextColor,
+            fontSize: 12.sp,
+            overflow: TextOverflow.ellipsis,
           ),
-        ).horizontalPadding(padding: 8),
+        ),
       ],
     );
   }

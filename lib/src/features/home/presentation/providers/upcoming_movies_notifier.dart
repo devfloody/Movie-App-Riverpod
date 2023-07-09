@@ -8,13 +8,13 @@ import '../../data/movie_repository.dart';
 class UpcomingMoviesNotifier extends AsyncNotifier<List<Movie>> {
   @override
   FutureOr<List<Movie>> build() {
-    return [];
+    return getMovies();
   }
 
   getMovies() async {
     state = const AsyncLoading();
     state = await AsyncValue.guard(
-      () => ref.read(movieRepository).upcomingMovies(page: 1),
+      () async => await ref.read(movieRepository).upcomingMovies(page: 1),
     );
   }
 }
