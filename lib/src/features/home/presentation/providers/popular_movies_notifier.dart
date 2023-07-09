@@ -8,7 +8,7 @@ import '../../data/movie_repository.dart';
 class PopularMoviesNotifier extends AsyncNotifier<List<Movie>> {
   @override
   FutureOr<List<Movie>> build() {
-    return [];
+    return getMovies();
   }
 
   getMovies() async {

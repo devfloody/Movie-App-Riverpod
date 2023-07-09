@@ -8,4 +8,6 @@ class AppColor {
   static const Color secondaryTextColor = Color(0xFFBBBBBB);
 
   static const Color primaryColor = Color(0xFFEF2D1A);
+
+  static const Color favColor = Color(0xFFF3BE00);
 }
