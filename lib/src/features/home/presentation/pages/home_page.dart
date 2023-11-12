@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:new_movie_riverpod/src/features/home/presentation/widgets/movie_staggered_widget.dart';
 
 import '../../../../../gen/assets.gen.dart';
-import '../../../../core/themes/app_theme.dart';
 import '../../../../core/shared/extentions/widget_extention.dart';
+import '../../../../core/themes/app_theme.dart';
 import '../widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -62,6 +63,10 @@ class HomePage extends StatelessWidget {
                       const UpcomingMovieCarouselWidget(),
                     ],
                   ),
+                ),
+                SliverPadding(padding: EdgeInsets.symmetric(vertical: 8.h)),
+                const SliverToBoxAdapter(
+                  child: MovieStaggeredWidget(),
                 ),
               ],
             ),

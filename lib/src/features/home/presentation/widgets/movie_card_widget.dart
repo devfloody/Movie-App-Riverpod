@@ -71,7 +71,7 @@ class MovieCardWidget extends StatelessWidget {
                                 Icons.star,
                                 color: AppColor.favColor,
                                 size: 14.sp,
-                              ),
+                              ), 
                               4.horizontalSpace,
                               Text(
                                 movie.voteAverage?.toStringAsFixed(1) ?? '',
